@@ -1,0 +1,110 @@
+{
+  "actorSpecification": 1,
+  "title": "LinkedIn URL results",
+  "description": "Raw JSON keeps every source field. Flat view shows export-friendly columns.",
+  "fields": {
+    "type": "object",
+    "properties": {
+      "inputUrl": {
+        "type": "string",
+        "title": "LinkedIn URL"
+      },
+      "full_name": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Full name"
+      },
+      "company": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Current company"
+      },
+      "headline": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Headline"
+      },
+      "linkedin_num_id": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "LinkedIn numeric ID"
+      },
+      "previousCompany": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Previous company"
+      },
+      "needsUpdate": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "title": "Needs update"
+      },
+      "success": {
+        "type": "boolean",
+        "title": "Success"
+      },
+      "error": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Error"
+      },
+      "checkedAt": {
+        "type": "string",
+        "title": "Checked at"
+      }
+    }
+  },
+  "views": {
+    "flat": {
+      "title": "Flat results",
+      "transformation": {
+        "fields": [
+          "inputUrl",
+          "full_name",
+          "company",
+          "headline",
+          "previousCompany",
+          "needsUpdate",
+          "success",
+          "error",
+          "checkedAt"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "inputUrl": {
+            "label": "LinkedIn URL",
+            "format": "link"
+          },
+          "success": {
+            "label": "Success",
+            "format": "boolean"
+          },
+          "needsUpdate": {
+            "label": "Needs update",
+            "format": "boolean"
+          },
+          "checkedAt": {
+            "label": "Checked at",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}

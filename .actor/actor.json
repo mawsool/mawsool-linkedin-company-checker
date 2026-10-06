@@ -1,0 +1,38 @@
+{
+  "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+  "actorSpecification": 1,
+  "name": "mawsool-linkedin-company-checker",
+  "title": "LinkedIn Current Company Checker",
+  "description": "Check current company and headline from LinkedIn profile URLs. Find stale CRM contacts before paying for full enrichment. Bulk CSV/JSON, from $0.60 per 1,000 checks.",
+  "seoTitle": "LinkedIn Current Company Checker",
+  "seoDescription": "Check current company and headline from LinkedIn URLs. Detect stale CRM contacts in bulk from $0.60 per 1,000 checks.",
+  "categories": [
+    "LEAD_GENERATION",
+    "SOCIAL_MEDIA"
+  ],
+  "version": "1.0",
+  "buildTag": "latest",
+  "minMemoryMbytes": 256,
+  "maxMemoryMbytes": 2048,
+  "defaultRunOptions": {
+    "build": "latest",
+    "timeoutSecs": 86400,
+    "memoryMbytes": 512
+  },
+  "environmentVariables": {
+    "ACTOR_MODE": "company",
+    "CHARGE_EVENT": "company-check",
+    "GUEST_API_KEY": "@mawsoolGuestApiKey"
+  },
+  "meta": {
+    "templateId": "ts-empty",
+    "generatedBy": "Cursor Agent"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "pricing": "./pay_per_event.json",
+  "dockerfile": "../Dockerfile"
+}

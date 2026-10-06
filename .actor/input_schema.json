@@ -1,0 +1,61 @@
+{
+  "title": "Check current LinkedIn company",
+  "type": "object",
+  "schemaVersion": 1,
+  "description": "Add URLs directly, paste CSV, or upload a CSV file.",
+  "properties": {
+    "urls": {
+      "title": "LinkedIn profile URLs",
+      "type": "array",
+      "description": "Add linkedin.com/in/... profile URLs.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.linkedin.com/in/osama-abdelhadi/"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "urlsCsv": {
+      "title": "Or paste CSV",
+      "type": "string",
+      "description": "Header: url. Current Company Checker also accepts previousCompany.",
+      "editor": "textarea",
+      "prefill": "url\nhttps://www.linkedin.com/in/osama-abdelhadi/"
+    },
+    "fileUrl": {
+      "title": "Or upload a CSV file",
+      "type": "string",
+      "description": "CSV with a url or linkedinUrl column.",
+      "editor": "fileupload"
+    },
+    "maxUrls": {
+      "title": "Maximum URLs",
+      "type": "integer",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 1000000,
+      "description": "Cost-control cap. Maximum 1,000,000."
+    },
+    "concurrency": {
+      "title": "Concurrent requests",
+      "type": "integer",
+      "description": "How many profile URLs to check at the same time.",
+      "default": 15,
+      "minimum": 1,
+      "maximum": 50
+    },
+    "resumeId": {
+      "title": "Resume ID (optional)",
+      "type": "string",
+      "description": "Reuse the same ID after a stopped large run to skip URLs that already completed.",
+      "editor": "textfield"
+    },
+    "freshStart": {
+      "title": "Check finished URLs again",
+      "type": "boolean",
+      "description": "Turn this on to ignore saved progress and check the whole list again.",
+      "default": false
+    }
+  }
+}
